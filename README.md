@@ -28,12 +28,19 @@ Each player now tallies up the scores from their respective hands. The player wi
 ## Part 2: CribbageSetup
 
 There are 4 functions in this set. This first function, CribbageSetup, is needed to run any of the 3 functions. It contains all the scoring mechanisms, prompting players, and announcement text that is required to play cribbage. It includes:
+
 Creating a deck of cards
+
 Counting a hand's points in the show for 15's, sequences, pairs, flushes, and the right jack.
+
 Combining all these show points together in a text format
+
 Checking if a player has won
+
 Mechanism for a player to choose which cards to either put away in the crib or use in the play
+
 Checking the current play/count to see if any points are awarded
+
 Some display information to make the game easier to read
 
 ## Part 3: PlayCribbage
