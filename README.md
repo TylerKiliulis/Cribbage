@@ -3,7 +3,39 @@ This is my first self-imposed long-term programming project in order to practice
 # Cribbage
 This set of functions will provide interactive and simulated cribbage games for 2 players. The opponent for the interactive function as well as both players in the simulated games will choose cards at random, without assessing the optimal play in the game.
 
-## Part 1: The Rules of Cribbage
+## Part 1: CribbageSetup
+
+There are 4 functions in this set. This first function, CribbageSetup, is needed to run any of the 3 functions. It contains all the scoring mechanisms, prompting players, and announcement text that is required to play cribbage.
+
+It includes:
+
+  -Creating a deck of cards
+
+  -Counting a hand's points in the show for 15's, sequences, pairs, flushes, and the right jack.
+
+  -Combining all these show points together in a text format
+
+  -Checking if a player has won
+
+  -Mechanism for a player to choose which cards to either put away in the crib or use in the play
+
+  -Checking the current play/count to see if any points are awarded
+
+  -Some display information to make the game easier to read
+
+## Part 2: PlayCribbage
+
+This function is a player versus a randomized opponent. Any time a player must make a choice of cards, such as what to discard or what to play in the pegging, this function will prompt the player for each choice. The opponent's choices will be completely randomized, playing a random card as long as it is a legal move. Informative text that display how points are awarded and the hands that those points came from are also printed each turn, to make sure the player can make accurate decisions.
+
+## Part 3: SimCribbage
+
+This function simulates a whole game of cribbage by having both players play completely random cards. Informative text is still shown describing points awarded along with the hands where these points come from. At the end of the game, the scores of both of the players are outputted in a list.
+
+## Part 4: SimCribbageNoTxt
+
+This function simulates a whole game of cribbage with randomized plays, just like SimCribbage. This function, however, removes all the printed text and only outputs the scores of both players in a list. This function is meant to be used when many games have to be simulated, ideally for getting specific data from random games of cribbage. This still uses CribbageSetup, where there is code that saves strings of characters that tell information about what is going on, but these strings won't be displayed.
+
+## Part 5: The Rules of Cribbage
 
 Cribbage is usually played by 2,3, or 4 players, though this release only allows for 2. The object of the game is to reach 121 points first. When calculating wins of a game, extra points may be awarded based on how much a player won by. If a player gets to 121 before their opponent has reached 91 points (or 3/4 of the way) then the losing player was "skunked." If a player reaches 121 before their opponent has reached 61 points (1/2 of the way) then the winner has "double-skunked" their opponent. Rules of how many additional "games" have been won after skunking or double-skunking vary.
 
@@ -24,33 +56,3 @@ During this process a number of things can happen that award the players points.
 ### Section c: The show
 
 Each player now tallies up the scores from their respective hands. The player without the crib goes first in counting and applying their points. Once again, they have their 4 cards plus the starter card that can award them points. The cards in their hand can be used more than once for different point combinations (for example the 3 of a kind for 6 was just 3 different pairs of 2. Another example of this is a 4,5,6 which gives a value of 15 cummulative points as well as a run of 3 in a row). If any combination of cards add up to 15, the player gets 2 points. Any sequence also gets its length in points; a 3 in a row is worth 3 points, a 5 in a row is worth 5, etc. Pairs are worth 2, 3 of a kind is worth 6, and 4 of a kind is worth 12. If a player's hand all has cards of the same suit, or a flush, it is worth 4, and if the starter card also has that suit, it is worth 5. Finally, if a player has a Jack and the suit of the Jack matches the suit of the starter card, the player gets 1 point. Tallying up points would typically look something like this: "15 for 2, 15 for 4, 3 in a row is 7, and the right jack for 8". Once the player without the crib goes, now the player with the crib tallies up their hand plus the starter card. Then, the player now tallies up their points for the crib plus the starter. The scoring is the exact same with the exception of flushes. All 5 cards-the crib cards and the starter, must be the same suit in order for the player to receive points based on a flush. Once this happens, the player without the crib now will get the crib in the next round, and the process repeats. Points are applied immediately after earning, so as soon as one player gets to 121, they win.
-
-## Part 2: CribbageSetup
-
-There are 4 functions in this set. This first function, CribbageSetup, is needed to run any of the 3 functions. It contains all the scoring mechanisms, prompting players, and announcement text that is required to play cribbage. It includes:
-
-Creating a deck of cards
-
-Counting a hand's points in the show for 15's, sequences, pairs, flushes, and the right jack.
-
-Combining all these show points together in a text format
-
-Checking if a player has won
-
-Mechanism for a player to choose which cards to either put away in the crib or use in the play
-
-Checking the current play/count to see if any points are awarded
-
-Some display information to make the game easier to read
-
-## Part 3: PlayCribbage
-
-This function is a player versus a randomized opponent. Any time a player must make a choice of cards, such as what to toss or what to place in the play, this function will prompt the player for each choice. The opponent's choices will be completely randomized, playing a random card as long as it is a legal move. Informative text that display how points are awarded and the hands that those points came from are also printed each turn, to make sure the player can make accurate decisions
-
-## Part 4: SimCribbage
-
-This function simulates a whole game of cribbage by having both players play completely random cards. Informative text is still shown describing points awarded along with the hands where these points come from. At the end of the game, the scores of both of the players are outputted in a list.
-
-## Part 5: SimCribbageNoTxt
-
-This function simulates a whole game of cribbage with randomized plays, just like SimCribbage. This function, however, removes all the printed text and only outputs the scores of both players in a list. This function is meant to be used when many games have to be simulated, ideally for getting specific data from random games of cribbage. This still uses CribbageSetup, where there is code that saves strings of characters that tell information about what is going on, but these strings won't be displayed.
