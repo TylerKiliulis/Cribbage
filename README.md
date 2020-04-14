@@ -1,4 +1,4 @@
-This is my first long-term project in order to practice coding, working with logic in R. In the future I plan to add more elements to this code, such as making the opponent "smarter", compatability with 3 player or even 4 player games, and graphical analyzation of games over a large amount of games.
+This is my first self-imposed long-term programming project in order to practice coding. In the future I plan to add more elements to this code, such as making the opponent "smarter", compatibility with 3/4 player games, and graphical analyzation over a large set of games.
 
 # Cribbage
 This set of functions will provide interactive and simulated cribbage games for 2 players. The opponent for the interactive function as well as both players in the simulated games will choose cards at random, without assessing the optimal play in the game.
@@ -27,9 +27,9 @@ Each player now tallies up the scores from their respective hands. The player wi
 
 ## Part 2: CribbageSetup
 
-There are 4 functions in this set. This first function, CribbageSetup, is needed to run any of the 3 functions. It contains all the scoring mechanisms, prompting players, and announcement text that is needed to play cribbage. It includes:
+There are 4 functions in this set. This first function, CribbageSetup, is needed to run any of the 3 functions. It contains all the scoring mechanisms, prompting players, and announcement text that is required to play cribbage. It includes:
 Creating a deck of cards
-Counting a hand's points in the show for 15s, sequences, pairs, flushes, and the right jack.
+Counting a hand's points in the show for 15's, sequences, pairs, flushes, and the right jack.
 Combining all these show points together in a text format
 Checking if a player has won
 Mechanism for a player to choose which cards to either put away in the crib or use in the play
